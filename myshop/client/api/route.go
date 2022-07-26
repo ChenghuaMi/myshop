@@ -2,16 +2,17 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"myshop/client/api/good"
 	"myshop/client/api/member"
 	"myshop/client/core/route"
 	"myshop/client/middleware"
 )
 
 func InitRouter() {
-	route.RegisterRoute(MemberApi)
+	route.RegisterRoute(MemberApi,GoodsApi)
 }
 func InitMiddleware() {
-	route.RegisterMiddleware(middleware.ZipLog(),middleware.ZipLog(),middleware.Recover())
+	route.RegisterMiddleware(middleware.ZipLog(),middleware.Recover())
 }
 
 func MemberApi(g *gin.Engine) {
@@ -20,5 +21,11 @@ func MemberApi(g *gin.Engine) {
 		group.POST("/login",member.Login)
 		group.POST("/register",member.Register)
 		group.GET("/user",middleware.ParseMid(),member.User)
+	}
+}
+func GoodsApi(g *gin.Engine) {
+	group := g.Group("good")
+	{
+		group.GET("/attr",good.GetAttr)
 	}
 }

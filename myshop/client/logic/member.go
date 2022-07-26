@@ -5,6 +5,7 @@ import (
 	er "myshop/client/errors"
 	"myshop/client/form"
 	"myshop/client/models"
+	"myshop/client/util"
 )
 
 
@@ -21,7 +22,7 @@ func(m *Member) Register(reg form.Register) (*models.Member,error){
 	mod := &models.Member{
 		Id:       models.GetWuid(),
 		Username: reg.Username,
-		Password: reg.Password,
+		Password: util.Md5(reg.Password),
 		Status:   0,
 		Nickname: "",
 		Phone:    "",
@@ -42,7 +43,7 @@ func(m *Member) FindOne(username string) (*models.Member,error) {
 }
 func(m *Member) Login(lg form.Login)(*models.Member,error) {
 	member := &models.Member{}
-	err := models.DB.Where("username=? and password=?",lg.Username,lg.Password).First(member).Error
+	err := models.DB.Where("username=? and password=?",lg.Username,util.Md5(lg.Password)).First(member).Error
 	if err == gorm.ErrRecordNotFound {
 		return member,er.UserUnExist
 	}

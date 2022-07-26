@@ -6,3 +6,17 @@ mysql:
   host: 127.0.0.1
   port: 3306
   db: shop
+log:
+  filename: E:\go\src\myshop\client\mylogs\mylog
+  maxsize: 20M
+  maxage: 2
+  maxbackups: 1
+
+cache:
+  cacheType: redis
+  freecache:
+    size: 1000
+    expiration: 10
+  redis:
+    host: 127.0.0.1
+    port: 6379

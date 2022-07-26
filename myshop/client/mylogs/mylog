@@ -1,0 +1,14 @@
+2022-07-24 16:25:09	info	middleware/zap.go:22	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:25:09", "end time": "2022-07-24 16:25:09", "cost": 0.0356802}
+2022-07-24 16:45:02	error	middleware/zap.go:28	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:45:02", "end time": "2022-07-24 16:45:02", "cost": 0.0528117, "status": 500, "error": ""}
+2022-07-24 16:45:45	info	middleware/zap.go:26	/member/login	{"path": "/member/login", "start time": "2022-07-24 16:45:44", "end time": "2022-07-24 16:45:45", "cost": 0.5508879, "status": 200, "error": ""}
+2022-07-24 16:46:26	info	middleware/zap.go:26	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:46:26", "end time": "2022-07-24 16:46:26", "cost": 0.0730531, "status": 200, "error": ""}
+2022-07-24 16:55:12	info	middleware/zap.go:26	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:55:12", "end time": "2022-07-24 16:55:12", "cost": 0.0172577, "status": 200, "error": ""}
+2022-07-24 16:55:27	error	middleware/recover.go:13	/member/user	{"error": "interface conversion: interface {} is nil, not *util.UserClaims", "method": "GET"}
+2022-07-24 16:55:27	error	middleware/zap.go:28	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:55:27", "end time": "2022-07-24 16:55:27", "cost": 0.0231932, "status": 500, "error": ""}
+2022-07-24 16:55:57	error	middleware/recover.go:13	/member/user	{"error": "interface conversion: interface {} is nil, not *util.UserClaims", "method": "GET"}
+2022-07-24 16:55:57	error	middleware/zap.go:28	/member/user	{"path": "/member/user", "start time": "2022-07-24 16:55:57", "end time": "2022-07-24 16:55:57", "cost": 0.022897, "status": 500, "error": ""}
+2022-07-26 10:10:31	info	middleware/zap.go:26	/good/attr?id=1	{"path": "/good/attr", "start time": "2022-07-26 10:10:31", "end time": "2022-07-26 10:10:31", "cost": 0.2103969, "status": 200, "error": ""}
+2022-07-26 10:10:32	error	middleware/zap.go:28	/favicon.ico	{"path": "/favicon.ico", "start time": "2022-07-26 10:10:32", "end time": "2022-07-26 10:10:32", "cost": 0, "status": 404, "error": ""}
+2022-07-26 10:11:32	error	middleware/zap.go:28	/good/attr	{"path": "/good/attr", "start time": "2022-07-26 10:11:32", "end time": "2022-07-26 10:11:32", "cost": 0.0009974, "status": 500, "error": ""}
+2022-07-26 10:11:59	error	middleware/zap.go:28	/good/attr?id=xxx	{"path": "/good/attr", "start time": "2022-07-26 10:11:59", "end time": "2022-07-26 10:11:59", "cost": 0, "status": 500, "error": ""}
+2022-07-26 10:12:13	error	middleware/zap.go:28	/good/attr?id=1xxx	{"path": "/good/attr", "start time": "2022-07-26 10:12:13", "end time": "2022-07-26 10:12:13", "cost": 0, "status": 500, "error": ""}
