@@ -20,3 +20,13 @@ cache:
   redis:
     host: 127.0.0.1
     port: 6379
+
+rpc_service:
+  servers: {
+    member: {
+      network: tcp,
+      address: ":8081",
+      cert_file: "core/rpc/keys/server.pem",
+      tls_server_name: "my_server_name"
+    }
+  }

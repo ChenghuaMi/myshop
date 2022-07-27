@@ -12,3 +12,9 @@
 2022-07-26 10:11:32	error	middleware/zap.go:28	/good/attr	{"path": "/good/attr", "start time": "2022-07-26 10:11:32", "end time": "2022-07-26 10:11:32", "cost": 0.0009974, "status": 500, "error": ""}
 2022-07-26 10:11:59	error	middleware/zap.go:28	/good/attr?id=xxx	{"path": "/good/attr", "start time": "2022-07-26 10:11:59", "end time": "2022-07-26 10:11:59", "cost": 0, "status": 500, "error": ""}
 2022-07-26 10:12:13	error	middleware/zap.go:28	/good/attr?id=1xxx	{"path": "/good/attr", "start time": "2022-07-26 10:12:13", "end time": "2022-07-26 10:12:13", "cost": 0, "status": 500, "error": ""}
+2022-07-27 22:50:27	error	client/common_client.go:22	rpc 调度 失败：member:Member.Login	{"error": "connection is shut down"}
+2022-07-27 22:50:27	error	middleware/zap.go:28	/member/rpc_login	{"path": "/member/rpc_login", "start time": "2022-07-27 22:50:27", "end time": "2022-07-27 22:50:27", "cost": 0.3401619, "status": 500, "error": ""}
+2022-07-27 22:54:15	error	client/common_client.go:22	rpc 调度 失败：member:Member.Login	{"error": "connection is shut down"}
+2022-07-27 22:54:15	error	middleware/zap.go:28	/member/rpc_login	{"path": "/member/rpc_login", "start time": "2022-07-27 22:54:15", "end time": "2022-07-27 22:54:15", "cost": 0.0059863, "status": 500, "error": ""}
+2022-07-27 22:59:39	error	client/common_client.go:22	rpc 调度 失败：member:Member.Login	{"error": "connection is shut down"}
+2022-07-27 22:59:39	error	middleware/zap.go:28	/member/rpc_login	{"path": "/member/rpc_login", "start time": "2022-07-27 22:59:39", "end time": "2022-07-27 22:59:39", "cost": 0.0189484, "status": 500, "error": ""}

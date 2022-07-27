@@ -8,17 +8,21 @@ import (
 	"myshop/client/api"
 	"myshop/client/cache"
 	"myshop/client/core/config"
+	"myshop/client/core/rpc"
 	"myshop/client/global"
 	"myshop/client/models"
 	"time"
+	"fmt"
 )
 
 const filepath = "E:\\go\\src\\myshop\\client\\config\\conf\\config.yml"
 func init() {
 	config.Viper(&global.Config,filepath)
+	fmt.Println(global.Config)
 	LoadCache()
 	LoadZap()
 	LoadDb()
+	LoadRpc()
 	api.InitMiddleware()
 	api.InitRouter()
 }
@@ -58,4 +62,17 @@ func WriteInfo() io.Writer {
 		LocalTime:  false,
 		Compress:   false,
 	}
+}
+func LoadRpc() {
+	var opts []rpc.DiaOption
+	for serverName,server := range global.Config.Rpc.Servers {
+		opts = append(opts,rpc.SetDialOption(serverName,&rpc.Server{
+			CertFile:      server.CertFile,
+			TlsServerName: server.TlsServerName,
+			Network:       server.Network,
+			Address:       server.Address,
+		}))
+	}
+	global.RpcClient = rpc.NewRpcClient(opts...)
+	fmt.Println(global.RpcClient)
 }

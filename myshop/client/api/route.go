@@ -21,6 +21,7 @@ func MemberApi(g *gin.Engine) {
 		group.POST("/login",member.Login)
 		group.POST("/register",member.Register)
 		group.GET("/user",middleware.ParseMid(),member.User)
+		group.POST("/rpc_login",member.RpcLogin)
 	}
 }
 func GoodsApi(g *gin.Engine) {

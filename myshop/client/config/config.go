@@ -5,4 +5,5 @@ type Config struct {
 	Mysql `mapstructure:"mysql"`
 	Log
 	Cache `mapstructure:"cache"`
+	Rpc 	`mapstructure:"rpc_service"`
 }
