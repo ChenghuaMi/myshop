@@ -1,0 +1,12 @@
+rpc:
+  addr: :8081
+  cert_file: "rpc/keys/server.pem"
+  key_file: "rpc/keys/server.key"
+
+mysql:
+  host: 127.0.0.1
+  username: root
+  password: 123456
+  port:     3306
+  dbname:   shop
+  charset:  utf8
